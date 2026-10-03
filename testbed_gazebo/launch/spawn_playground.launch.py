@@ -27,11 +27,13 @@ def generate_launch_description():
         os.environ['GAZEBO_MODEL_PATH'] =  os.environ['GAZEBO_MODEL_PATH'] + ':' + install_dir + '/share' + ':' + gazebo_models_path
     else:
         os.environ['GAZEBO_MODEL_PATH'] =  install_dir + "/share" + ':' + gazebo_models_path
-
+    
+    ros_plugin_path = "/opt/ros/humble/lib"
+    plugins_to_add = f"{ros_plugin_path}:{install_dir}/lib"
     if 'GAZEBO_PLUGIN_PATH' in os.environ:
-        os.environ['GAZEBO_PLUGIN_PATH'] = os.environ['GAZEBO_PLUGIN_PATH'] + ':' + install_dir + '/lib'
+        os.environ['GAZEBO_PLUGIN_PATH'] = os.environ['GAZEBO_PLUGIN_PATH'] + ':' + plugins_to_add
     else:
-        os.environ['GAZEBO_PLUGIN_PATH'] = install_dir + '/lib'
+        os.environ['GAZEBO_PLUGIN_PATH'] = plugins_to_add
 
     print("GAZEBO MODELS PATH=="+str(os.environ["GAZEBO_MODEL_PATH"]))
     print("GAZEBO PLUGINS PATH=="+str(os.environ["GAZEBO_PLUGIN_PATH"]))
