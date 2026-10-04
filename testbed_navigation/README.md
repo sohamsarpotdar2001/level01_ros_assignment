@@ -110,7 +110,8 @@ testbed_navigation/
 ros2 launch testbed_navigation map_loader.launch.py
 ```
 
-<img width="1200" height="845" alt="map_rviz_viz" src="https://github.com/user-attachments/assets/e359becb-e418-42c1-8fb3-ab6dddaa333b" />
+<img width="1200" height="845" alt="map_rviz_viz" src="https://github.com/user-attachments/assets/db76106c-7bc0-4251-932c-12b3a0039864" />
+
 
 ### AMCL Localization
 * Create `testbed_navigation/config/amcl_params.yaml` and add the required ros parameters.
@@ -124,7 +125,8 @@ ros2 launch testbed_navigation map_loader.launch.py
 ros2 launch testbed_navigation localization.launch.py
 ```
 
-<img width="1829" height="951" alt="Screenshot from 2026-10-03 22-11-33" src="https://github.com/user-attachments/assets/9974b525-d127-4d1d-89c4-a6053c67df89" />
+<img width="1829" height="951" alt="amcl_rviz_viz" src="https://github.com/user-attachments/assets/70f9fd59-987d-4ed5-99af-bbaba5ab83f0" />
+
 
 ### Navigation
 * Create `testbed_navigation/config/nav2_params.yaml` and add parameters for global and local costmaps, waypoint follower, behaviour tree navigator, behaviours, smoother, controllers, planners and collision monitor.
@@ -139,4 +141,5 @@ ros2 launch testbed_navigation localization.launch.py
 ```bash
 ros2 launch testbed_navigation navigation.launch.py
 ```
-<img width="800" height="570" alt="Screencastfrom10-03-2026053729PM-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/da5d1690-3b02-4a83-9e6e-7a941e8bf102" />
+
+<img width="800" height="570" alt="navigation_gif" src="https://github.com/user-attachments/assets/35697dd7-9acc-4085-8adc-7f68e902f3da" />
