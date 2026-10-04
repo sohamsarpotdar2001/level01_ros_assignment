@@ -1,0 +1,28 @@
+BUG FIX LOG: Testbed Project
+
+Build and Configuration:
+1. CMake Parse Error
+
+Issue: colcon build failed due to a syntax error in testbed_description/CMakeLists.txt.
+Solution: Added missing parentheses to ament_package() on line 23.
+
+2. Missing Installation Directories
+
+Issue: maps and models folders were missing from share directories after installation.
+Solution: Updated CMakeLists.txt for both testbed_bringup and testbed_gazebo to include these directories in the install rules.
+
+3. Map File Path Mismatch
+
+Issue: YAML configuration pointed to wrong_path_testbed_world.pgm.
+Solution: Corrected image filename to testbed_world.pgm.
+
+Gazebo & Simulation:
+4. Plugin Path Resolution
+
+Issue: DiffDrive and Lidar plugins were not loading because GAZEBO_PLUGIN_PATH was empty or incomplete.
+Solution: Modified spawn_playground.launch.py to explicitly include the ROS Humble plugin directory: plugins_to_add = "/opt/ros/humble/lib:{install_dir}/lib"
+
+5. URDF Cleanup
+
+Issue: Unnecessary libgazebo_ros_control.so plugin and an extra > character on line 43 of testbed.gazebo.
+Solution: Removed the unused plugin and cleaned the XML syntax. Validated using gz sdf -p.
